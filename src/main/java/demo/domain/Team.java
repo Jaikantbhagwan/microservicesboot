@@ -7,6 +7,8 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -16,6 +18,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 @Entity
 public class Team {
 
+	@Id
+	@GeneratedValue
+	Long id;
     String name;
     String location;
     String mascotte;

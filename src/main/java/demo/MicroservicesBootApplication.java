@@ -1,6 +1,6 @@
 
 
-package org.springframework.microservicesboot;
+package demo;
 
 
 import java.util.HashSet;
@@ -21,6 +21,8 @@ import demo.domain.Team;
 
 @SpringBootApplication
 public class MicroservicesBootApplication extends SpringBootServletInitializer {
+    @Autowired
+    TeamDao teamDao;
 
     public static void main(String[] args) {
         SpringApplication.run(MicroservicesBootApplication.class, args);
@@ -39,12 +41,7 @@ public class MicroservicesBootApplication extends SpringBootServletInitializer {
         players.add(new Player("Jaikant", "'pitcher"));
         players.add(new Player("Srikant", "'shortstop"));
 
-        Team team = new Team("California", "Peanuts", players);
+        Team team = new Team( "Peanuts", "California", players);
         teamDao.save(team);
     }
-
-    @Autowired
-    TeamDao teamDao;
-
-
 }
