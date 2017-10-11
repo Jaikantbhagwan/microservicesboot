@@ -1,5 +1,6 @@
 
-package demo;
+
+package microservices;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,10 @@ public class WhateverIWant {
     TeamDao teamDao;
 
 
-    @RequestMapping("/teams/{name}")
+    @RequestMapping("/hi/{name}")
     public Team hiThere(@PathVariable String name) {
 
-   return teamDao.findByName(name);
- }
+        return teamDao.findByName(name);
+    }
 
 }
